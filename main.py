@@ -32,52 +32,6 @@ BRANDEDCHAT = Client(
     api_hash = API_HASH ,
     bot_token = BOT_TOKEN
 )
-async def is_admins(chat_id: int):
-    return [
-        member.user.id
-        async for member in bot.iter_chat_members(
-            chat_id, filter="administrators"
-        )
-    ]
-
-
-PHOTO = [
-    START_IMG1,
-    START_IMG2,
-    START_IMG3,
-    START_IMG4,
-    START_IMG5,
-    START_IMG6,
-    START_IMG7,
-    START_IMG8,
-    START_IMG9,
-    START_IMG10,
-]
-
-EMOJIOS = [ 
-      "💣",
-      "💥",
-      "🪄",
-      "🧨",
-      "⚡",
-      "🤡",
-      "👻",
-      "🎃",
-      "🎩",
-      "🕊",
-]
-      
-STICKER = [
-      STKR,
-      STKR1,
-      STKR2,
-      STKR3,
-      STKR4,
-      STKR5,
-      STKR6,
-      STKR7,
-      STKR8,
-]
 START = f"""
 **๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}]({START_IMG1})**
 **➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**

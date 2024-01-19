@@ -1,52 +1,33 @@
-#Don't remove This Line From Here. @venombolteop | @venombolteop
-#Github :- @venombolteop
+from pyrogram import Client, filters
+from pyrogram.types import *
+from pymongo import MongoClient
+from pyrogram.enums import ChatAction
 import requests
 import random
+from random import choice
 import os
 import re
 import asyncio
 import time
 from datetime import datetime
+from pyrogram import enums
+API_ID = os.environ.get("API_ID", None) 
+API_HASH = os.environ.get("API_HASH", None) 
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
+MONGO_URL = os.environ.get("MONGO_URL", None)
+BOT_USERNAME = os.environ.get("BOT_USERNAME","") 
+UPDATE_CHNL = os.environ.get("UPDATE_CHNL","BRANDRD_BOT")
+OWNER_USERNAME = os.environ.get("OWNER_USERNAME","BRANDEDKING82")
+SUPPORT_GRP = os.environ.get("SUPPORT_GRP","BRANDED_WORLD")
+BOT_NAME = os.environ.get("BOT_NAME","CHATBOT")
+START_IMG = os.environ.get("START_IMG","")
 
-from pyrogram import Client, filters
-from pyrogram.types import *
-
-from pymongo import MongoClient
-from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
+STKR = os.environ.get("STKR")
 
 
-API_ID = os.environ.get("API_ID", "") 
-API_HASH = os.environ.get("API_HASH", "") 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
-MONGO_URL = os.environ.get("MONGO_URL", "")
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "") 
-UPDATE_CHNL = os.environ.get("UPDATE_CHNL", "Venomowners")
-OWNER_ID = os.environ.get("OWNER_ID", "6306738739")
-OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "Venom_bolti_public")
-SUPPORT_GRP = os.environ.get("SUPPORT_GRP", "Venom_Chatz")
-BOT_NAME = os.environ.get("BOT_NAME", "")
-START_IMG1 = os.environ.get("START_IMG1", "https://te.legra.ph/file/a406783ab421e5c53ab13.jpg")
-START_IMG2 = os.environ.get("START_IMG2")
-START_IMG3 = os.environ.get("START_IMG3")
-START_IMG4 = os.environ.get("START_IMG4")
-START_IMG5 = os.environ.get("START_IMG5")
-START_IMG6 = os.environ.get("START_IMG6")
-START_IMG7 = os.environ.get("START_IMG7")
-START_IMG8 = os.environ.get("START_IMG8")
-START_IMG9 = os.environ.get("START_IMG9")
-START_IMG10 = os.environ.get("START_IMG10")
-STKR = os.environ.get("STKR", "CAACAgUAAxkBAAEQgbVkOO3r_5PYE0ON9mzwwKf32pBwXgACqQgAAnlEWVV0rARmhc_yUy8E")
-STKR1 = os.environ.get("STKR1", "CAACAgQAAxkBAALRi2NZXUgjZCT775L5Nr0XrLbQ6XIpAAK_EQACpvFxHq2xh5JRVJNrKgQ")
-STKR2 = os.environ.get("STKR2", "CAACAgQAAxkBAALRjGNZXUs6YPggISBdtg4nXaU0vjNzAALqCwACbCIRU61ZQKi3F88DKgQ")
-STKR3 = os.environ.get("STKR3", "CAACAgQAAxkBAALRjWNZXUvETcfHR2Yi9ftTQLLP2uD8AAIVDAAC1SMQU-QrCHEcbz8rKgQ")
-STKR4 = os.environ.get("STKR4", "CAACAgQAAxkBAALRjmNZXWw-WbZ_iAg-4UGixa7WSz3RAAK9CQACelwRUzpqVCTmeOrfKgQ")
-STKR5 = os.environ.get("STKR5", "CAACAgQAAxkBAALRj2NZXXJw6Pw7TJgYQStoq4u2oYpmAAKgEQACpvFxHk7lQeNrq3NMKgQ")
-STKR6 = os.environ.get("STKR6", "CAACAgQAAxkBAALRkGNZXYmAXYRR4lmCxHGPgG012Vm0AAJiFwACpvFxHuCsJc_EpuEVKgQ")
-STKR7 = os.environ.get("STKR7", "CAACAgQAAxkBAALRkWNZXYyCvkfI4d1lK0AEMkG0GdUmAAJmFwACpvFxHnvJHTM8_o9XKgQ")
-STKR8 = os.environ.get("STKR8", "CAACAgQAAxkBAALRkmNZXZg1zuakmgkPf2lfXPXi4bZaAALACgACQUGpUjAAAYL3e09XCyoE")
-
-bot = Client(
-    "QueenBot" ,
+StartTime = time.time()
+BRANDEDCHAT = Client(
+    "chat-bot" ,
     api_id = API_ID,
     api_hash = API_HASH ,
     bot_token = BOT_TOKEN

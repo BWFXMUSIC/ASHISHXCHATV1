@@ -32,12 +32,6 @@ BRANDEDCHAT = Client(
     api_hash = API_HASH ,
     bot_token = BOT_TOKEN
 )
-
-mongo = MongoCli(MONGO_URL)
-db = mongo.Anonymous
-chatsdb = db.chatsdb
-usersdb = db.users
-
 async def is_admins(chat_id: int):
     return [
         member.user.id
